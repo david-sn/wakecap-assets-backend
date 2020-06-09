@@ -47,6 +47,7 @@ make sure that port 3000 for node server and 27017 mongodb
 ## Project Source Tree
 
 ProjectDirRoot
+```bash
 ├───bin/
 │   └───www //server config
 ├───config/
@@ -109,4 +110,5 @@ ProjectDirRoot
 ├───docker-compose.yml //config for mongodb image and wake-cape node image
 ├───package.json// project libraries and versions
 └───wakeCap.postman_collection.json //postman of all end points
+```
 Good Chance :)
