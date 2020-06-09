@@ -4,7 +4,7 @@
 * Frist Asset every starting day send the duration will be 0.
 
 ## Non-functional requirements
-make sure that port 3000 for node server and 27017 mongodb
+make sure that port 3000 for node server and 27017 mongodb are free and not used by other apps.
 
 ## (A) Auto Installation Using Docker Compose.
 1- Install ```docker``` and ```docker-compose``` depends on your OS,  for docker check [here](https://docs.docker.com/get-docker/), and for docker-compose [here](https://docs.docker.com/compose/install/)
@@ -56,7 +56,7 @@ ProjectDirRoot
 ├───constants/
 │   ├───http-responses.constants.js// common HTTP Status Code definition 
 │   └───response-formate.constants.js// common Response Template formate
-├───models/ 
+├───models/ //contains models schema definitions
 │   ├───AssetsDetails.js //database Model
 │   ├───ClientDetails.js//database Model
 │   ├───SiteDetails.js//database Model
@@ -67,7 +67,7 @@ ProjectDirRoot
 │   └───stylesheets/
 │       └───style.css
 ├───reports/ //generate daily reports path
-│   └───Al_Futtaim/ //client name
+│   └───Al_Futtaim/ //client name (dynamic Generated)
 │       └───Khalifa_Tower-1-June-2020.json //site name with date
 ├───routes/ //API routes
 │   ├───clients-details/
@@ -105,7 +105,7 @@ ProjectDirRoot
 ├───.dockerignore
 ├───.eslintrc.json// ESLint configuration
 ├───Dockerfile //docker image config
-├───README.md 
+├───README.md //WE ARE HERE :) 
 ├───app.js //application sequence of middlewares
 ├───docker-compose.debug.yml //for debug over docker
 ├───docker-compose.yml //config for mongodb image and wake-cape node image
