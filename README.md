@@ -1,7 +1,7 @@
 # Welcome To WakeCap Backend Challenge
 
 ## Assumptions
-* Fist Asset every starting day send the duration will be 0.
+* Frist Asset every starting day send the duration will be 0.
 
 ## Non-functional requirements
 make sure that port 3000 for node server and 27017 mongodb
