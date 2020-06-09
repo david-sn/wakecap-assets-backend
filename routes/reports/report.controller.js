@@ -181,7 +181,7 @@ function generateReportPDF(absentWorkers, lateWorkers, activeHoursForWorkers, in
 	let data = { absentWorkers, lateWorkers, activeHoursForWorkers, inactiveHoursForWorkers };
 
 	let day = new Date();
-	let fileName = day.getDay() + "-" + monthNames[(day.getMonth())] + "-" + day.getFullYear();
+	let fileName = day.getDate() + "-" + monthNames[(day.getMonth())] + "-" + day.getFullYear();
 	const dir = `${global.__base}/reports/${clientName}`;
 	const fullPath = `${dir}/${siteName}-${fileName}.json`
 	if (!fs.existsSync(dir)) {
