@@ -46,8 +46,9 @@ make sure that port 3000 for node server and 27017 mongodb
 ***
 ## Project Source Tree
 
-ProjectDirRoot
+
 ```bash
+ProjectDirRoot
 ├───bin/
 │   └───www //server config
 ├───config/
