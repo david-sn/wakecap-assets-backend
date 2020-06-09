@@ -34,7 +34,7 @@ make sure that port 3000 for node server and 27017 mongodb
 
 8- Execute ```$ npm start``` to run the server.
 
-10- Enjoy with postman collection {{projectDir}}/wakeCap.postman_collection.json attached with project or find it [here](https://www.getpostman.com/collections/d1559ea2b200bd7a3ac3)
+9- Enjoy with postman collection {{projectDir}}/wakeCap.postman_collection.json attached with project or find it [here](https://www.getpostman.com/collections/d1559ea2b200bd7a3ac3)
 
 * Output of daily reports generated under {{ProjectDir}}/reports directory grouped by site name. 
 
