@@ -119,23 +119,20 @@ async function getLateQueryResult(siteId, startingHour, lateThreshold, startingD
 
 	-- Case 1 early attendance: 
 timeline:	------||-------------------------(*)----------------------------||--------------
-			StartingHoure=9.00        firstAssetAt=9.05Am	        lateThreshold=1Hour=10.00
+		StartingHoure=9.00        firstAssetAt=9.05Am	        lateThreshold=1Hour=10.00
 											duration = 0
 	
 
-							+++++++++++++++++++++++++++++++
+			+++++++++++++++++++++++++++++++
 	
 
 	-- Case 2 late attendance: should get in query
 timeline:	 ------||-------------------------||-----------------------------(*)---------
-			StartingHoure=9.00        lateThreshold=1Hour=10.00		firstAssetAt = 10.20Am
+                StartingHoure=9.00        lateThreshold=1Hour=10.00		firstAssetAt = 10.20Am
 											duration = 0	
 
 
 	*/
-
-
-	console.log(startingDate, "************", startingHour, lateThreshold);
 
 	startingDate.setUTCHours(startingHour + lateThreshold);// start at 9.00 and lateThreshold one hour
 	let query = {
@@ -143,7 +140,6 @@ timeline:	 ------||-------------------------||-----------------------------(*)--
 		"workerDetail.siteDetail._id": siteId,
 		"createdAt": { "$gt": startingDate, "$lt": endDayHour }
 	};
-	console.log(startingDate, "************", endDayHour);
 	return await service.findAssetDetail(query);
 }
 
@@ -173,7 +169,7 @@ function convertSecondsToHours(resultAggregateSumQuery) {
 	if (resultAggregateSumQuery.length > 0) {
 		sumValue = (resultAggregateSumQuery[0].sum) / 3600;//convert second to hours
 	}
-	return sumValue.toFixed(2) + "  Horur(s)";//example 0.03888888888888889 ---toFixed(2)---> 0.04
+	return sumValue.toFixed(2) + "  Hours(s)";//example 0.03888888888888889 ---toFixed(2)---> 0.04
 }
 
 /**
