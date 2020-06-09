@@ -4,7 +4,7 @@
 * Frist Asset every starting day send the duration will be 0.
 
 ## Non-functional requirements
-make sure that port 3000 for node server and 27017 mongodb
+make sure that port 3000 for node server and 27017 mongodb are free and not used by other apps.
 
 ## (A) Auto Installation Using Docker Compose.
 1- Install ```docker``` and ```docker-compose``` depends on your OS,  for docker check [here](https://docs.docker.com/get-docker/), and for docker-compose [here](https://docs.docker.com/compose/install/)
