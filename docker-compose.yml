@@ -1,0 +1,26 @@
+version: '3.4'
+services:
+# NodeJS App
+ web:
+  image: wakecap
+  container_name: assets-wakecap
+  build: .
+  environment:
+    NODE_ENV: production
+  ports:
+   - 3000:3000
+  volumes:
+   - .:/reports
+  links:
+   - mongodb
+  command: npm start
+ 
+ 
+ # MongoDB
+ mongodb:
+  image: mongo
+  container_name: assets-mongodb
+  ports:
+   - 27017:27017
+
+    

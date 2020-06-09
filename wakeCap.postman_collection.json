@@ -1,0 +1,571 @@
+{
+	"info": {
+		"_postman_id": "3582907b-a86a-4c4f-b671-0794b6b690ff",
+		"name": "wakeCap",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "client-details",
+			"item": [
+				{
+					"name": "createClient",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"david\",\n    \"detail\": \"shiref\",\n    \"attachements\": [\n        {\n            \"mediaType\": \"image\",\n            \"pointer\": \"profile\",\n            \"url\": \"Strign\",\n            \"thumbnail\": \"Strign\"\n        }\n    ],\n    \"phone\": {\n        \"code\": \"+2\",\n        \"number\": \"1289286468\"\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/clients/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"clients",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateClient",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\n    \"name\": \"david\",\n    \"detail\": \"shiref\",\n    \"attachements\": [\n        {\n            \"mediaType\": \"image\",\n            \"pointer\": \"profile\",\n            \"url\": \"Strign\",\n            \"thumbnail\": \"Strign\"\n        }\n    ],\n    \"phone\": {\n        \"code\": \"+2\",\n        \"number\": \"1289286468\"\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/clients/5edaab1dbf5d821817b6a161",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"clients",
+								"5edaab1dbf5d821817b6a161"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getClientById",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\n    \"name\": \"david\",\n    \"detail\": \"shiref\",\n    \"attachements\": [\n        {\n            \"mediaType\": \"image\",\n            \"pointer\": \"profile\",\n            \"url\": \"Strign\",\n            \"thumbnail\": \"Strign\"\n        }\n    ],\n    \"phone\": {\n        \"code\": \"+2\",\n        \"number\": \"1289286468\"\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/clients/5edaab1dbf5d821817b6a162",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"clients",
+								"5edaab1dbf5d821817b6a162"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getAllClients",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\n    \"name\": \"david\",\n    \"detail\": \"shiref\",\n    \"attachements\": [\n        {\n            \"mediaType\": \"image\",\n            \"pointer\": \"profile\",\n            \"url\": \"Strign\",\n            \"thumbnail\": \"Strign\"\n        }\n    ],\n    \"phone\": {\n        \"code\": \"+2\",\n        \"number\": \"1289286468\"\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/clients",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"clients"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DeleteClient",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\n    \"name\": \"david\",\n    \"detail\": \"shiref\",\n    \"attachements\": [\n        {\n            \"mediaType\": \"image\",\n            \"pointer\": \"profile\",\n            \"url\": \"Strign\",\n            \"thumbnail\": \"Strign\"\n        }\n    ],\n    \"phone\": {\n        \"code\": \"+2\",\n        \"number\": \"1289286468\"\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/clients/5edaab1dbf5d821817b6a162",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"clients",
+								"5edaab1dbf5d821817b6a162"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "worker-details",
+			"item": [
+				{
+					"name": "createWorker",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": {\n    \t\"first\":\"david\",\n    \t\"last\":\"shiref\"\n    },\n    \"siteId\": \"5edacfa0bd4bcfcb01c85684\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/workers/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"workers",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateWorker",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": {\n    \t\"first\":\"ddd\",\n    \t\"last\":\"shiref\"\n    },\n    \"siteId\": \"5edad807bd4bcfcb01c85686\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/workers/5edad5e4b461a22ec0c04990",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"workers",
+								"5edad5e4b461a22ec0c04990"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getWorkerById",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\n    \"name\": \"david\",\n    \"detail\": \"shiref\",\n    \"attachements\": [\n        {\n            \"mediaType\": \"image\",\n            \"pointer\": \"profile\",\n            \"url\": \"Strign\",\n            \"thumbnail\": \"Strign\"\n        }\n    ],\n    \"phone\": {\n        \"code\": \"+2\",\n        \"number\": \"1289286468\"\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/workers/5edad5e4b461a22ec0c04990",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"workers",
+								"5edad5e4b461a22ec0c04990"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getAllWorkers",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\n    \"name\": \"david\",\n    \"detail\": \"shiref\",\n    \"attachements\": [\n        {\n            \"mediaType\": \"image\",\n            \"pointer\": \"profile\",\n            \"url\": \"Strign\",\n            \"thumbnail\": \"Strign\"\n        }\n    ],\n    \"phone\": {\n        \"code\": \"+2\",\n        \"number\": \"1289286468\"\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/workers",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"workers"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DeleteWorker",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\n    \"name\": \"david\",\n    \"detail\": \"shiref\",\n    \"attachements\": [\n        {\n            \"mediaType\": \"image\",\n            \"pointer\": \"profile\",\n            \"url\": \"Strign\",\n            \"thumbnail\": \"Strign\"\n        }\n    ],\n    \"phone\": {\n        \"code\": \"+2\",\n        \"number\": \"1289286468\"\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/workers/5edad5e4b461a22ec0c04990",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"workers",
+								"5edad5e4b461a22ec0c04990"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "site-details",
+			"item": [
+				{
+					"name": "createSites",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n   \"name\": \"String\",\n    \"gps\": {\n        \"lat\":30,\n        \"lon\":30\n    },\n    \"timezone\": 0,\n    \"startingHour\":9,\n    \"endingHour\": 13,\n    \"lateThreshold\": 10,\n    \"totalInactiveHours\": 1,\n    \"clientId\":\"5edaaad9bf5d821817b6a160\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/sites/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"sites",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateSites",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\n   \"name\": \"String\",\n    \"gps\": {\n        \"lat\":30,\n        \"lon\":30\n    },\n    \"timezone\": 0,\n    \"startingHour\":10,\n    \"endingHour\": 13,\n    \"lateThreshold\": 10,\n    \"totalInactiveHours\": 1,\n    \"clientId\":\"5edaab1dbf5d821817b6a162\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/sites/5edadd8b2261f4308e497576",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"sites",
+								"5edadd8b2261f4308e497576"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getSitesById",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\n    \"name\": \"david\",\n    \"detail\": \"shiref\",\n    \"attachements\": [\n        {\n            \"mediaType\": \"image\",\n            \"pointer\": \"profile\",\n            \"url\": \"Strign\",\n            \"thumbnail\": \"Strign\"\n        }\n    ],\n    \"phone\": {\n        \"code\": \"+2\",\n        \"number\": \"1289286468\"\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/sites/5edadd8b2261f4308e497576",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"sites",
+								"5edadd8b2261f4308e497576"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getAllSites",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\n    \"name\": \"david\",\n    \"detail\": \"shiref\",\n    \"attachements\": [\n        {\n            \"mediaType\": \"image\",\n            \"pointer\": \"profile\",\n            \"url\": \"Strign\",\n            \"thumbnail\": \"Strign\"\n        }\n    ],\n    \"phone\": {\n        \"code\": \"+2\",\n        \"number\": \"1289286468\"\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/sites",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"sites"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DeleteSites",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\n    \"name\": \"david\",\n    \"detail\": \"shiref\",\n    \"attachements\": [\n        {\n            \"mediaType\": \"image\",\n            \"pointer\": \"profile\",\n            \"url\": \"Strign\",\n            \"thumbnail\": \"Strign\"\n        }\n    ],\n    \"phone\": {\n        \"code\": \"+2\",\n        \"number\": \"1289286468\"\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/sites/5edadd8b2261f4308e497576",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"sites",
+								"5edadd8b2261f4308e497576"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "e750fc44-479a-4a8a-938f-52dde21fbf0c",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "6ece2145-3aed-4053-b719-4509139a27ec",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "assets",
+			"item": [
+				{
+					"name": "sendAssets",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"coordinates\" : {\n        \"coordinates\" : [ \n            55.14046, \n            25.06155\n        ],\n     \n        \"type\" : \"Point\"\n    },\n    \"is_active\": true,\n    \"duration\" : 180,\n    \"worker_id\" : \"5edad5e4b461a22ec0c04990\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/assets/",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"assets",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "reports",
+			"item": [
+				{
+					"name": "listDirs",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"coordinates\" : {\n        \"coordinates\" : [ \n            55.14046, \n            25.06155\n        ],\n     \n        \"type\" : \"Point\"\n    },\n    \"is_active\": true,\n    \"duration\" : 180,\n    \"worker_id\" : \"5edad5e4b461a22ec0c04990\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/report/",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"report",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		}
+	],
+	"protocolProfileBehavior": {}
+}

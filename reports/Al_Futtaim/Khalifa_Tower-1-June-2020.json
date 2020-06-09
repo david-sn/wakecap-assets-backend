@@ -1,0 +1,51 @@
+{
+    "absentWorkers": [
+        {
+            "_id": "5ede9f98866a8923930e8106",
+            "deletedAt": null,
+            "name": {
+                "first": "Ahmed",
+                "last": "Ali"
+            },
+            "createdAt": "2020-06-08T19:48:52.675Z",
+            "updatedAt": "2020-06-08T19:48:52.675Z",
+            "__v": 0
+        }
+    ],
+    "lateWorkers": [
+        {
+            "coordinates": {
+                "coordinates": [
+                    55.14046,
+                    25.06155
+                ],
+                "type": "Point"
+            },
+            "workerDetail": {
+                "name": {
+                    "first": "david",
+                    "last": "shiref"
+                },
+                "siteDetail": {
+                    "gps": {
+                        "lat": 30,
+                        "lon": 30
+                    },
+                    "_id": "5ede7b3c0707b54a399c3c61",
+                    "name": "Khalifa_Tower"
+                },
+                "_id": "5ede9624a9862a57389103a6"
+            },
+            "deletedAt": null,
+            "_id": "5ede963ca9862a57389103a7",
+            "is_active": true,
+            "duration": 0,
+            "worker_id": "5ede9624a9862a57389103a6",
+            "createdAt": "2020-06-08T10:49:16.151Z",
+            "updatedAt": "2020-06-08T19:49:16.151Z",
+            "__v": 0
+        }
+    ],
+    "activeHoursForWorkers": "0.04  Horur(s)",
+    "inactiveHoursForWorkers": "0.00  Horur(s)"
+}
