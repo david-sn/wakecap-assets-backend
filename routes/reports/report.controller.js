@@ -65,8 +65,7 @@ function getTimeZoneCode(houtUTC) {
 
 
 async function generateReport(siteDetail) {
-
-	siteId = siteDetail._id.toString();
+	let	siteId = siteDetail._id.toString();
 	let [startDate, endDate] = getStartAndEndDate();
 
 	const [absentWorkers, lateWorkers, activeHoursForWorkers, inactiveHoursForWorkers] = await Promise.all([
@@ -222,7 +221,7 @@ function getDirectories(siteName, cb) {
 	fs.readdir(siteName ? `${global.__base}/reports/${siteName}` : `${global.__base}/reports/`, (err, files) => {
 		cb(err, files);
 	});
-};
+}
 
 
 
