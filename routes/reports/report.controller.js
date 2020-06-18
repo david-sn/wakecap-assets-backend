@@ -65,7 +65,7 @@ function getTimeZoneCode(houtUTC) {
 
 
 async function generateReport(siteDetail) {
-	let	siteId = siteDetail._id.toString();
+	let siteId = siteDetail._id.toString();
 	let [startDate, endDate] = getStartAndEndDate();
 
 	const [absentWorkers, lateWorkers, activeHoursForWorkers, inactiveHoursForWorkers] = await Promise.all([
@@ -198,14 +198,14 @@ async function listReports(req, res) {
 	const reqQuery = req.params;
 	getDirectories(reqQuery.siteName, function (err, rs) {
 		if (err) {
-			res.status(HttpResponsesConst.InternalServerError.code).json(formatResponse(HttpResponsesConst.InternalServerError, err));
+			formatResponse(res, HttpResponsesConst.InternalServerError, err);
 		} else {
 			let metaData;
 			if (reqQuery.siteName)
 				metaData = "http://localhost:3000/report/" + reqQuery.siteName + "/";
 			else
 				metaData = "http://localhost:3000/report/";
-			res.status(HttpResponsesConst.OK.code).json(formatResponse(HttpResponsesConst.OK, rs.map(dir => { return metaData + dir })));
+			formatResponse(res, HttpResponsesConst.OK, rs.map(dir => { return metaData + dir }));
 		}
 	});
 }
@@ -213,7 +213,7 @@ async function listReports(req, res) {
 async function readReport(req, res) {
 	const reqQuery = req.params;
 	let reportDetail = fs.readFileSync(`${global.__base}/reports/${reqQuery.siteName}/${reqQuery.fileName}`);
-	res.status(HttpResponsesConst.OK.code).json(formatResponse(HttpResponsesConst.OK, (JSON.parse(reportDetail))));
+	formatResponse(res, HttpResponsesConst.OK, (JSON.parse(reportDetail)));
 }
 
 

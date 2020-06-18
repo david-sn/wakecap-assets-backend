@@ -13,12 +13,12 @@ async function createClient(req, res) {
 	const reqBody = req.body;
 	const errorRequest = await validation.createClientValidation(reqBody);
 	if (errorRequest.error) {
-		return res.status(HttpResponsesConst.BadRequest.code).json(formatResponse(HttpResponsesConst.BadRequest, errorRequest.error));
+		return formatResponse(res, HttpResponsesConst.BadRequest, errorRequest.error);
 
 	} else {
 		clientService.createClient(reqBody)
-			.then(savedClient => res.status(HttpResponsesConst.Created.code).json(formatResponse(HttpResponsesConst.Created, savedClient)))
-			.catch(e => res.status(HttpResponsesConst.InternalServerError.code).json(formatResponse(HttpResponsesConst.InternalServerError, e.toString())));
+			.then(savedClient => formatResponse(res, HttpResponsesConst.Created, savedClient))
+			.catch(e => formatResponse(res, HttpResponsesConst.InternalServerError, e.toString()));
 	}
 }
 
@@ -33,15 +33,15 @@ async function updateClient(req, res) {
 
 	const errorRequest = await validation.updateClientValidation({ reqBody, ...reqQuery });
 	if (errorRequest.error) {
-		return res.status(HttpResponsesConst.BadRequest.code).json(formatResponse(HttpResponsesConst.BadRequest, errorRequest.error));
+		return formatResponse(res, HttpResponsesConst.BadRequest, errorRequest.error);
 	} else {
 		const existClient = await clientService.getClientById(reqQuery.clientId);
 		if (!existClient) {
-			return res.status(HttpResponsesConst.NotFound.code).json(formatResponse(HttpResponsesConst.NotFound, reqQuery));
+			return formatResponse(res, HttpResponsesConst.NotFound, reqQuery);
 		} else {
 			clientService.updateClient(reqBody, reqQuery.clientId)
-				.then(updatedClient => res.status(HttpResponsesConst.OK.code).json(formatResponse(HttpResponsesConst.OK, updatedClient.nModified)))
-				.catch(e => res.status(HttpResponsesConst.InternalServerError.code).json(formatResponse(HttpResponsesConst.InternalServerError, e.toString())));
+				.then(updatedClient => formatResponse(res, HttpResponsesConst.OK, updatedClient.nModified))
+				.catch(e => formatResponse(res, HttpResponsesConst.InternalServerError, e.toString()));
 		}
 	}
 }
@@ -56,15 +56,15 @@ async function deleteClient(req, res) {
 
 	const errorRequest = await validation.deleteOrFindByIdValidation(reqQuery);
 	if (errorRequest.error) {
-		return res.status(HttpResponsesConst.BadRequest.code).json(formatResponse(HttpResponsesConst.BadRequest, errorRequest.error));
+		return formatResponse(res, HttpResponsesConst.BadRequest, errorRequest.error);
 	}
 	const existClient = await clientService.getClientById(reqQuery.clientId);
 	if (!existClient) {
-		return res.status(HttpResponsesConst.NotFound.code).json(formatResponse(HttpResponsesConst.NotFound, reqQuery));
+		return formatResponse(res, HttpResponsesConst.NotFound, reqQuery);
 	} else {
 		clientService.deleteClient(reqQuery.clientId)
-			.then(deletedStats => res.status(HttpResponsesConst.OK.code).json(formatResponse(HttpResponsesConst.OK, deletedStats.nModified)))
-			.catch(e => res.status(HttpResponsesConst.InternalServerError.code).json(formatResponse(HttpResponsesConst.InternalServerError, e.toString())));
+			.then(deletedStats => formatResponse(res, HttpResponsesConst.OK, deletedStats.nModified))
+			.catch(e => formatResponse(res, HttpResponsesConst.InternalServerError, e.toString()));
 	}
 
 }
@@ -79,15 +79,15 @@ async function getClientById(req, res) {
 
 	const errorRequest = await validation.deleteOrFindByIdValidation(reqQuery);
 	if (errorRequest.error) {
-		return res.status(HttpResponsesConst.BadRequest.code).json(formatResponse(HttpResponsesConst.BadRequest, errorRequest.error));
+		return formatResponse(res, HttpResponsesConst.BadRequest, errorRequest.error);
 	}
 	clientService.getClientById(reqQuery.clientId)
 		.then(clientDetail => {
 			if (clientDetail)
-				return res.status(HttpResponsesConst.OK.code).json(formatResponse(HttpResponsesConst.OK, clientDetail));
-			else return res.status(HttpResponsesConst.NotFound.code).json(formatResponse(HttpResponsesConst.NotFound, reqQuery));
+				returnformatResponse(res, HttpResponsesConst.OK, clientDetail);
+			else return formatResponse(res, HttpResponsesConst.NotFound, reqQuery);
 		})
-		.catch(e => res.status(HttpResponsesConst.InternalServerError.code).json(formatResponse(HttpResponsesConst.InternalServerError, e.toString())));
+		.catch(e => formatResponse(res, HttpResponsesConst.InternalServerError, e.toString()));
 }
 
 /**
@@ -100,11 +100,11 @@ async function getAllClients(req, res) {
 
 	const errorRequest = validation.getAllClientsValidation(reqQuery);
 	if (errorRequest.error) {
-		return res.status(HttpResponsesConst.BadRequest.code).json(formatResponse(HttpResponsesConst.BadRequest, errorRequest.error));
+		return formatResponse(res, HttpResponsesConst.BadRequest, errorRequest.error);
 	}
 	clientService.getAllClients({})
-		.then(clients => res.status(HttpResponsesConst.OK.code).json(formatResponse(HttpResponsesConst.OK, clients)))
-		.catch(e => res.status(HttpResponsesConst.InternalServerError.code).json(formatResponse(HttpResponsesConst.InternalServerError, e.toString())));
+		.then(clients => formatResponse(res, HttpResponsesConst.OK, clients))
+		.catch (e => formatResponse(res, HttpResponsesConst.InternalServerError, e.toString()));
 
 }
 
