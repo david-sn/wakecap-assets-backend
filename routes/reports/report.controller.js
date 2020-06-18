@@ -213,7 +213,7 @@ async function listReports(req, res) {
 async function readReport(req, res) {
 	const reqQuery = req.params;
 	let reportDetail = fs.readFileSync(`${global.__base}/reports/${reqQuery.siteName}/${reqQuery.fileName}`);
-	formatResponse(res, HttpResponsesConst.OK, (JSON.parse(reportDetail)));
+	return formatResponse(res, HttpResponsesConst.OK, (JSON.parse(reportDetail)));
 }
 
 
