@@ -14,10 +14,10 @@ async function createAssets(req, res) {//reduce sync call, prefere use Kafka/kin
 
 	const errorRequest = await validation.createAssetsValidation(reqBody);
 	if (errorRequest.error) {
-		return formatResponse(HttpResponsesConst.BadRequest, errorRequest.error);
+		return formatResponse(res, HttpResponsesConst.BadRequest, errorRequest.error);
 	} else {
 		assetService.createAssets(reqBody);//async call, don't need to waite for saved data just validate only
-		return formatResponse(HttpResponsesConst.Created);
+		return formatResponse(res, HttpResponsesConst.Created);
 	}
 }
 
